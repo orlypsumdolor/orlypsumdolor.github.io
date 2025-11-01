@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orlando Yanson Jr - CTO & Senior Developer with 12+ years of experience in Android, Flutter, and Backend Development">
+    <title>Orlando Yanson Jr - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00d9ff;
+            --secondary-color: #00a8cc;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-light: #8b8b8b;
+            --bg-dark: #1a1a1a;
+            --bg-darker: #141414;
+            --bg-white: #ffffff;
+            --border-color: #333333;
+            --accent-color: #00d9ff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+        }
+
+        .nav-cta:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            background: var(--bg-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 1s ease;
+        }
+
+        .hero-greeting {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.3);
+        }
+
+        .hero-cta:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 217, 255, 0.4);
+        }
+
+        .hero-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInRight 1s ease;
+            position: relative;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            filter: drop-shadow(0 20px 40px rgba(0, 217, 255, 0.3));
+            transition: transform 0.5s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 80px 0;
+            background: var(--bg-darker);
+        }
+
+        .section {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.1);
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            font-weight: 800;
+        }
+
+        /* Summary Section */
+        .summary-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .summary-text p {
+            margin-bottom: 15px;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: var(--bg-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .role-item {
+            margin-bottom: 20px;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .role-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .role-duration {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .role-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Education Section */
+        .education-item {
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .school {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .education-duration {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .contact-cta h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-cta p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .social-link {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .company-header {
+                flex-direction: column;
+            }
+
+            .experience-item {
+                padding-left: 20px;
+            }
+
+            .contact-cta h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 20px 15px;
+            }
+
+            .role-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: var(--primary-color);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .project-card {
+            background: var(--bg-darker);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
+            border-color: rgba(0, 217, 255, 0.5);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-header {
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 168, 204, 0.1));
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .project-company {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .project-body {
+            padding: 20px 25px;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-skill {
+            background: rgba(0, 217, 255, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: rgba(0, 217, 255, 0.1);
+        }
+
+        .project-link:hover {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            transform: translateX(5px);
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 1.2rem;
+            }
+
+            .hero-image-wrapper {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                padding: 20px;
+            }
+
+            .project-body {
+                padding: 15px 20px;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">OY</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-greeting">Hi There 👋 I'm</div>
+                    <h1>Orlando Yanson Jr</h1>
+                    <div class="hero-title">CTO & Senior Developer • Android, Flutter, Backend 🧑‍💻</div>
+                    <p class="hero-description">I'm a professional mobile developer with 12+ years of experience building award-winning Android applications and leading technical teams. Based in Davao, Philippines, specializing in scalable mobile solutions and full-stack development.</p>
+                    <a href="#contact" class="hero-cta">Hire Me</a>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://github.com/orlypsumdolor" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/orlando-yanson-jr" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:orlandoyanson.dev@gmail.com" class="social-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                            </svg>
+                            Email
+                        </a>
+                        <a href="tel:+639542493800" class="social-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            Phone
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <img src="profile.jpg" alt="Orlando Yanson Jr" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <!-- Summary Section -->
+            <section class="section">
+                <h2 class="section-title">Summary</h2>
+                <div class="summary-text">
+                    <p>From building award-winning mobile apps to leading technical strategy as a CTO, my 12+ year journey in software development has been driven by turning complex problems into elegant, user-friendly solutions.</p>
+                    
+                    <p>I started at Twidl Inc developing <strong>Epic Life</strong>, a Samsung Galaxy Gear game that won the <strong>Globe Samsung Regional App Challenge</strong> and represented the Philippines internationally. That early success taught me that great apps aren't just about code; they're about creating experiences that resonate with users.</p>
+                    
+                    <p>I've contributed to high-impact projects including <strong>Kumu</strong> (Philippines' leading live streaming platform), <strong>Wandermaps</strong> (GPS-enabled interactive travel maps), and applications across healthcare, smart home technology, agriculture, and fintech sectors.</p>
+                    
+                    <div class="highlight-box">
+                        <strong>Core expertise:</strong> Android (Java, Kotlin), Flutter, backend architecture, MVVM/Clean Architecture, technical leadership, and full product lifecycle development.
+                    </div>
+                    
+                    <!-- Skills Tags -->
+                    <div class="skills-container">
+                        <span class="skill-tag">Android</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">Backend Development</span>
+                        <span class="skill-tag">MVVM Architecture</span>
+                        <span class="skill-tag">Clean Architecture</span>
+                        <span class="skill-tag">Jetpack Compose</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Cloud Infrastructure</span>
+                        <span class="skill-tag">IoT Integration</span>
+                        <span class="skill-tag">Team Leadership</span>
+                    </div>
+                    
+                    <p>I'm passionate about writing clean maintainable code and building products that make a real difference. Let's connect if you're interested in mobile development, technical leadership, or building great software.</p>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="section">
+                <h2 class="section-title">Experience</h2>
+                
+                <!-- CoDev -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">CoDev</h3>
+                        <span class="duration">April 2023 - Present · 2 years 8 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Android Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Developed Wandermaps, a global network platform for interactive travel maps. Led the Android development effort, implementing GPS-enabled mapping features, QR code scanning functionality, and offline map capabilities. Utilized Kotlin, MVVM architecture, and modern Android development practices including Jetpack Compose. Collaborated with cross-functional teams to deliver a premium mapping experience that eliminated the need for multiple location-specific apps.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- xpace -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">xpace</h3>
+                        <span class="duration">September 2022 - Present · 3 years 3 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Chief Technical Officer</h4>
+                        </div>
+                        <p class="role-description">
+                            Leading technical strategy and architecture for Xpace, an all-in-one digital commerce platform. Responsible for overseeing the entire technology stack, making critical architectural decisions, and ensuring scalable solutions that enable businesses to build digital stores, manage appointment bookings, and integrate with Facebook, Instagram, and Google. Managing development teams and establishing best practices for code quality, security, and performance optimization.
+                        </p>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Back End Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Architecting and developing robust backend services and APIs that power the Xpace platform. Designing database schemas, implementing business logic, and ensuring secure data handling practices. Building scalable microservices architecture, managing cloud infrastructure, and optimizing server performance. Integrating third-party services including payment gateways and social media platforms to enable seamless multi-channel commerce capabilities.
+                        </p>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Flutter Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Developing and maintaining cross-platform mobile applications using Flutter and Dart. Building responsive, high-performance user interfaces that deliver seamless experiences across iOS and Android platforms. Implementing state management solutions, integrating RESTful APIs, and ensuring code maintainability through clean architecture principles. Collaborating with design teams to translate UI/UX requirements into functional mobile applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kumu -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Kumu</h3>
+                        <span class="duration">November 2021 - April 2023 · 1 year 6 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Engineer</h4>
+                        </div>
+                        <p class="role-description">
+                            Contributed to the development and maintenance of Kumu, the Philippines' leading community live streaming platform connecting Filipinos worldwide. Implemented real-time streaming features, chat functionality, and social engagement tools using Android SDK and Kotlin. Optimized app performance to handle high concurrent users, reduced crash rates through comprehensive testing, and improved overall user experience. Worked closely with product managers and designers to deliver features that enhanced community interaction.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Appetiser Apps -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Appetiser Apps</h3>
+                        <span class="duration">January 2019 - November 2021 · 2 years 11 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Android Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Delivered multiple client projects including Tradie Pass, FARMap, and TradeNow across various industries. Led full-cycle Android application development from requirement gathering to deployment. Implemented complex features such as document management systems, farm mapping with geolocation, and financial services integration. Mentored junior developers, conducted code reviews, and established coding standards that improved team productivity by 30%. Successfully launched apps that achieved high user satisfaction ratings across different market segments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Binary Bean Technologies -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Binary Bean Technologies</h3>
+                        <span class="duration">November 2017 - January 2019 · 1 year 3 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Android Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Developed Avario Intelligent Home Technology, a comprehensive smart home automation application. Built intuitive Android interfaces for controlling home devices, implemented real-time communication protocols, and integrated with various IoT devices. Designed modular architecture enabling easy scalability and future hardware compatibility. Focused on creating energy-efficient solutions and user-friendly experiences that made smart home technology accessible to mainstream consumers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Oflander Dockhiemer -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Oflander Dockhiemer</h3>
+                        <span class="duration">March 2017 - November 2017 · 9 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Android Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Led the development of ORSTAT, a healthcare operations management application for operating room efficiency. Managed project timelines, coordinated with stakeholders, and oversaw a team of developers. Implemented real-time notification systems, task management workflows, and comprehensive reporting features. Designed intuitive interfaces for medical staff with emphasis on reliability and ease of use in high-pressure hospital environments. Successfully delivered a solution that improved OR staff coordination and operational transparency.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mynd Dynamic Consulting Inc -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Mynd Dynamic Consulting Inc</h3>
+                        <span class="duration">November 2015 - February 2017 · 1 year 4 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Mobile Application Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Developed healthcare and wellness applications including SharecareRx and Dr. Oz companion apps. Implemented features for stress management tracking, health monitoring, and educational content delivery. Integrated with wearable devices and health APIs to collect user data. Built engaging user experiences that encouraged healthy lifestyle habits while maintaining strict privacy and security standards for sensitive health information. Collaborated with healthcare professionals to ensure medical accuracy and usability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Twidl Inc -->
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Twidl Inc.</h3>
+                        <span class="duration">October 2013 - November 2015 · 2 years 2 months</span>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-header">
+                            <h4 class="role-title">Mobile Application Developer</h4>
+                        </div>
+                        <p class="role-description">
+                            Launched career developing innovative mobile applications including City Lifebit, Globe Hopp, Epic Life, and Lifebit. Built Epic Life, a Samsung Galaxy Gear watch game that won the Globe Samsung Regional App Challenge and represented the Philippines internationally. Developed social networking features, geolocation services, and gamification elements across multiple apps. Gained comprehensive experience in mobile development fundamentals, API integrations, and user-centric design principles that established foundation for senior-level expertise.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Avario -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Avario Intelligent Home Technology</div>
+                            <div class="project-company">Binary Bean Technologies</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Smart home automation system that seamlessly integrates into homes to create an intelligent environment. Built on cutting-edge technology with easy installation, configuration, and customization. Focuses on energy savings, simplicity, and lower cost of ownership while being future-proof and compatible with favorite services and products.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">IoT</span>
+                                <span class="project-skill">Home Automation</span>
+                            </div>
+                            <a href="https://avar.io" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- City Lifebit -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">City Lifebit</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Deal and discount platform featuring unbeatable offers on tours and 3-day/2-night packages, plus tons of discounts and freebies from the city's most popular restaurants, stores, resorts, and spas. Helps users discover and save on local experiences and services.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Social Platform</span>
+                                <span class="project-skill">Local Services</span>
+                            </div>
+                            <a href="https://edgedavao.net/the-economy/2016/03/twidl-to-launch-city-lifebit-app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Davao City Clubs -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Davao City Clubs</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">The best companion app for Davao City tourists and locals alike, providing comprehensive information about clubs, entertainment venues, and nightlife in Davao City. Helps users discover and explore the city's vibrant social scene.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Google Maps API</span>
+                                <span class="project-skill">Social Engine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Oz Companion App -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Dr. Oz Companion App</div>
+                            <div class="project-company">Mynd Dynamic Consulting Inc</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Companion application for Dr. Mehmet Oz's health and wellness show. Provides access to health information, expert advice, and educational content on topics ranging from diet and exercise to disease prevention. Helps viewers engage with show content and implement health recommendations.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Healthcare</span>
+                                <span class="project-skill">Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Epic Life -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Epic Life ⭐</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">An award-winning language adventure game for Samsung Galaxy Gear watches that teaches how civilizations start and evolve. Won the Globe Samsung Regional App Challenge and represented the Philippines in the SingTel Group competition in Singapore (November 2014). A pioneering wearable gaming experience.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Wearable</span>
+                                <span class="project-skill">Gaming</span>
+                                <span class="project-skill">Education</span>
+                                <span class="project-skill">Award Winner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FARMap -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">FARMap</div>
+                            <div class="project-company">Appetiser Apps</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A simple-to-use farm mapping and livestock management application. Enables farmers to manage stock movements, joining and calving dates, and welfare management tasks like drenching and vaccination dates. Input data and produce reports quickly without paperwork, streamlining farm operations.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Offline Maps</span>
+                                <span class="project-skill">Database Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Globe Hopp -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Globe Hopp</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A social journal for travelers to share stories of their adventures. Users can share photos, short video clips, and their adventure trail maps, creating a comprehensive digital record of their travel experiences to inspire and connect with other travelers.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">Social Engine</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Google Maps API</span>
+                                <span class="project-skill">Cloud Architecture</span>
+                                <span class="project-skill">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kumu -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Kumu</div>
+                            <div class="project-company">Kumu</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">The Philippines' leading community live streaming platform connecting millions of Filipinos worldwide. A social entertainment app where users can hang out, explore live streams, meet new people, and chat with the Kumunity. Features real-time streaming, interactive chat, virtual gifting, and community engagement tools.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">Real-time Streaming</span>
+                                <span class="project-skill">WebSocket</span>
+                                <span class="project-skill">Video/Audio</span>
+                                <span class="project-skill">Chat Systems</span>
+                                <span class="project-skill">Firebase</span>
+                                <span class="project-skill">MVVM</span>
+                            </div>
+                            <a href="https://kumu.ph" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Lifebit -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Lifebit</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A social app built on top of a gaming layer where users earn rewards for doing things they love, turning life itself into a game. Combines Instagram-like social features with gamification elements to encourage positive habits and social engagement.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Social</span>
+                                <span class="project-skill">Gamification</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ORSTAT -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">ORSTAT</div>
+                            <div class="project-company">Oflander Dockhiemer</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Healthcare operations management application for operating rooms that alerts OR staff upon turnover start, requires staff task acceptance, and tracks start/completion times. Features a robust web portal generating specific reports on on-time performance of individual staff, teams, and individual rooms to improve operational efficiency.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">Social Engine</span>
+                                <span class="project-skill">Healthcare</span>
+                                <span class="project-skill">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SharecareRx -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">SharecareRx</div>
+                            <div class="project-company">Mynd Dynamic Consulting Inc</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Health and wellness app that helps users manage stress by running in the background during normal phone usage. Analyzes phone call patterns and behaviors to improve stress awareness almost immediately, providing insights for better mental health management.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Health Tech</span>
+                                <span class="project-skill">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TradeNow -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">TradeNow</div>
+                            <div class="project-company">Appetiser Apps</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Fintech platform offering buy-now-pay-later finance solutions to customers while providing financial security to businesses. Enables flexible payment options and streamlines the purchasing process for both consumers and merchants.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">Payment Integration</span>
+                                <span class="project-skill">Financial APIs</span>
+                                <span class="project-skill">Security/Encryption</span>
+                                <span class="project-skill">KYC/Verification</span>
+                                <span class="project-skill">Material Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tradie Pass -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Tradie Pass</div>
+                            <div class="project-company">Appetiser Apps</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">An eco-friendly digital platform for tradies to manage certificates, licenses, and cards in one place. Provides direct access to training providers when credentials are expiring, enables easy file sharing, and ensures compliant entry into construction sites once verified. Eliminates paper trails while maintaining security and accessibility.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">Document Management</span>
+                                <span class="project-skill">Cloud Architecture</span>
+                                <span class="project-skill">Security/Encryption</span>
+                                <span class="project-skill">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wandermaps -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Wandermaps</div>
+                            <div class="project-company">CoDev</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A global network of locally built maps providing premium and official interactive maps for travel and recreation destinations worldwide. Users can scan QR codes for instant access to GPS-enabled maps built and updated by destinations themselves, eliminating the need for multiple location-specific apps or paper maps.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">Google Maps API</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">QR Code</span>
+                                <span class="project-skill">Offline Maps</span>
+                                <span class="project-skill">MVVM Architecture</span>
+                                <span class="project-skill">RESTful APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Xpace -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Xpace</div>
+                            <div class="project-company">xpace</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">An all-in-one digital commerce platform that empowers businesses to build their own digital stores, accept appointment bookings 24/7, and sell products through Facebook, Instagram, and Google integration. Comprehensive solution for modern businesses to manage their entire online presence from a single platform.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Flutter</span>
+                                <span class="project-skill">Dart</span>
+                                <span class="project-skill">Backend</span>
+                                <span class="project-skill">REST APIs</span>
+                                <span class="project-skill">Firebase</span>
+                                <span class="project-skill">Payment Gateway</span>
+                                <span class="project-skill">Microservices</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="school">Notre Dame of Dadiangas University</div>
+                    <div class="degree">Bachelor's Degree, Information Technology</div>
+                    <div class="education-duration">June 2009 - October 2013</div>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <div class="contact-cta">
+                <h2>Let's Build Something Great Together</h2>
+                <p>Interested in collaboration or discussing your next mobile project?</p>
+                <a href="mailto:orlandoyanson.dev@gmail.com" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Orlando Yanson Jr. All rights reserved.</p>
+            <p>Built with passion for clean code and great user experiences.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

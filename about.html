@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Orlando Yanson Jr - CTO & Senior Developer with 12+ years of experience in Android, Flutter, and Backend Development">
+    <title>About - Orlando Yanson Jr</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00d9ff;
+            --secondary-color: #00a8cc;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-light: #8b8b8b;
+            --bg-dark: #1a1a1a;
+            --bg-darker: #141414;
+            --bg-white: #ffffff;
+            --border-color: #333333;
+            --accent-color: #00d9ff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .content {
+            padding: 120px 0 80px;
+            background: var(--bg-darker);
+        }
+
+        .page-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.1);
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            font-weight: 800;
+        }
+
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .summary-text p {
+            margin-bottom: 20px;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 217, 255, 0.3);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 168, 204, 0.1));
+            border-left: 4px solid var(--primary-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+        }
+
+        .highlight-box strong {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Education Section */
+        .education-item {
+            padding: 20px;
+            background: rgba(0, 217, 255, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .school {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .education-duration {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .page-hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">OY</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <div class="page-hero">
+                <h1>About Me</h1>
+                <p>Building award-winning mobile experiences and leading technical teams for 12+ years</p>
+            </div>
+
+            <!-- Summary Section -->
+            <section class="section">
+                <h2 class="section-title">Professional Background</h2>
+                <div class="summary-text">
+                    <p>From building award-winning mobile apps to leading technical strategy as a CTO, my 12+ year journey in software development has been driven by turning complex problems into elegant, user-friendly solutions.</p>
+                    
+                    <p>I started at Twidl Inc developing <strong>Epic Life</strong>, a Samsung Galaxy Gear game that won the <strong>Globe Samsung Regional App Challenge</strong> and represented the Philippines internationally. That early success taught me that great apps aren't just about code; they're about creating experiences that resonate with users.</p>
+                    
+                    <p>I've contributed to high-impact projects including <strong>Kumu</strong> (Philippines' leading live streaming platform), <strong>Wandermaps</strong> (GPS-enabled interactive travel maps), and applications across healthcare, smart home technology, agriculture, and fintech sectors.</p>
+                    
+                    <div class="highlight-box">
+                        <strong>Core expertise:</strong> Android (Java, Kotlin), Flutter, backend architecture, MVVM/Clean Architecture, technical leadership, and full product lifecycle development.
+                    </div>
+                    
+                    <p>I'm passionate about writing clean maintainable code and building products that make a real difference. Let's connect if you're interested in mobile development, technical leadership, or building great software.</p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="summary-text">
+                    <p>Over the past 12+ years, I've developed expertise across the full mobile development stack and beyond:</p>
+                    
+                    <div class="skills-container">
+                        <span class="skill-tag">Android</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">Backend Development</span>
+                        <span class="skill-tag">MVVM Architecture</span>
+                        <span class="skill-tag">Clean Architecture</span>
+                        <span class="skill-tag">Jetpack Compose</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Cloud Infrastructure</span>
+                        <span class="skill-tag">IoT Integration</span>
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Real-time Streaming</span>
+                        <span class="skill-tag">WebSocket</span>
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Payment Gateways</span>
+                        <span class="skill-tag">Google Maps API</span>
+                        <span class="skill-tag">GPS/Geolocation</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="school">Notre Dame of Dadiangas University</div>
+                    <div class="degree">Bachelor's Degree, Information Technology</div>
+                    <div class="education-duration">June 2009 - October 2013</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Orlando Yanson Jr. All rights reserved.</p>
+            <p>Built with passion for clean code and great user experiences.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
