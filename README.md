@@ -4,16 +4,18 @@ A modern, responsive portfolio website showcasing 12+ years of experience in mob
 
 ## 🌟 Features
 
-- **Modern Design**: Clean, professional layout with smooth animations and transitions
+- **Modern Dark Theme Design**: Clean, professional layout with smooth animations and transitions
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **Multi-Page Navigation**: Dedicated pages for Home, About, Services, Portfolio, and Contact
 - **Profile Integration**: Professional headshot with hover effects
-- **Social Media Links**: Quick access to GitHub, LinkedIn, Email, and Twitter
+- **Social Media Links**: Quick access to GitHub, LinkedIn, Email, and Phone
 - **Interactive Elements**: Hover effects on cards, buttons, and links
 - **Skill Tags**: Visual display of technical expertise
 - **Timeline Experience**: Professional journey with detailed company information
 - **Interactive Project Showcase**: 15 featured projects with hover effects, skill tags, and external links
 - **Project Cards**: Modern grid layout with gradient accents, smooth animations, and responsive design
-- **Contact CTA**: Easy-to-find call-to-action for collaboration
+- **Contact Form**: Professional contact form with social links
+- **No Dependencies**: Pure HTML5 and CSS3 with no external libraries
 
 ## 🚀 Quick Start
 
@@ -29,6 +31,10 @@ A modern, responsive portfolio website showcasing 12+ years of experience in mob
 
 2. **Upload files** to the repository:
    - `index.html`
+   - `about.html`
+   - `services.html`
+   - `portfolio.html`
+   - `contact.html`
    - `profile.jpg`
 
 3. **Enable GitHub Pages**:
@@ -122,25 +128,50 @@ The portfolio includes pre-configured links for:
 - **GitHub**: Showcase your repositories and open-source contributions
 - **LinkedIn**: Professional networking and career history
 - **Email**: Direct contact for opportunities
-- **Twitter**: Professional updates and tech community engagement
+- **Phone**: Direct communication for urgent matters
 
 ## 🎨 Design Features
 
-- **Color Scheme**: Professional blue gradient with green accents
+- **Color Scheme**: Modern dark theme with teal cyan accent colors (#00d9ff)
 - **Typography**: System fonts for fast loading and native appearance
 - **Animations**: Smooth fade-in effects on page load and scroll
 - **Accessibility**: Semantic HTML with proper ARIA labels
 - **SEO Optimized**: Meta tags for better search engine visibility
+- **Navigation**: Fixed navbar with smooth scrolling and active page highlighting
 
-## 📄 Sections
+## 📄 Pages
 
-1. **Hero Section**: Name, title, location, and social links with profile image
-2. **Summary**: Professional overview with key achievements
+### 🏠 Home (index.html)
+1. **Hero Section**: Split layout with greeting, name, title, and profile image
+2. **Summary**: Professional overview with key achievements and skills
 3. **Experience**: Detailed work history with 9 companies
 4. **Featured Projects**: 15 interactive project cards showcasing major work
 5. **Education**: Academic background
 6. **Contact CTA**: Call-to-action for collaboration
 7. **Footer**: Copyright information
+
+### ℹ️ About (about.html)
+- Professional background and journey
+- Technical skills showcase
+- Education details
+
+### 💼 Services (services.html)
+- Mobile App Development
+- Cross-Platform Development
+- Backend Architecture
+- Technical Leadership
+- System Integration
+- Consulting & Strategy
+
+### 🎨 Portfolio (portfolio.html)
+- All 15 featured projects with descriptions
+- Skill tags for each project
+- External links to live projects
+
+### 📧 Contact (contact.html)
+- Contact information
+- Professional contact form
+- Social media links
 
 ## 🛠️ Technologies Used
 
