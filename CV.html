@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orlando Yanson Jr - Curriculum Vitae</title>
+    <style>
+        @media print {
+            body { margin: 0; padding: 0; }
+            .no-print { display: none; }
+            @page { size: A4; margin: 1.5cm; }
+            body { font-size: 11pt; }
+            .section { page-break-inside: avoid; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.5;
+            color: #000000;
+            background: #ffffff;
+            padding: 20px;
+            font-size: 11pt;
+        }
+        
+        .cv-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        
+        /* Header Section - ATS Friendly */
+        .header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #000000;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header .title {
+            font-size: 14pt;
+            color: #000000;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #000000;
+        }
+        
+        .contact-info a {
+            color: #000000;
+            text-decoration: none;
+        }
+        
+        /* Section Styles - Standard ATS Headings */
+        .section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 3px;
+        }
+        
+        .section-content {
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+        
+        /* Professional Summary */
+        .summary {
+            text-align: left;
+            color: #000000;
+        }
+        
+        .summary p {
+            margin-bottom: 10px;
+        }
+        
+        /* Experience & Education - ATS Friendly Format */
+        .experience-item, .education-item, .award-item {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        
+        .item-header {
+            margin-bottom: 5px;
+        }
+        
+        .item-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #000000;
+            display: inline;
+        }
+        
+        .item-company {
+            font-size: 11pt;
+            color: #000000;
+            font-weight: bold;
+            display: inline;
+        }
+        
+        .item-date {
+            font-size: 10pt;
+            color: #000000;
+            float: right;
+            font-style: normal;
+        }
+        
+        .item-description {
+            color: #000000;
+            margin-top: 5px;
+            margin-left: 0;
+            text-align: left;
+        }
+        
+        .item-description ul {
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .item-description li {
+            margin-bottom: 4px;
+        }
+        
+        /* Skills - ATS Friendly List */
+        .skills-container {
+            display: block;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+        
+        .skill-category h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 5px;
+            text-transform: none;
+        }
+        
+        .skill-list {
+            display: inline;
+            font-size: 10pt;
+        }
+        
+        .skill-tag {
+            display: inline;
+            color: #000000;
+            margin-right: 8px;
+        }
+        
+        .skill-tag::after {
+            content: ", ";
+        }
+        
+        .skill-tag:last-child::after {
+            content: "";
+        }
+        
+        /* Awards */
+        .award-title {
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 3px;
+        }
+        
+        .award-description {
+            color: #000000;
+            font-size: 10pt;
+        }
+        
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12pt;
+            font-weight: 600;
+            z-index: 1000;
+            font-family: inherit;
+        }
+        
+        .print-button:hover {
+            background: #1e40af;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            a {
+                color: #000000;
+                text-decoration: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+                font-size: 10pt;
+            }
+            
+            .header h1 {
+                font-size: 20pt;
+            }
+            
+            .item-date {
+                float: none;
+                display: block;
+                margin-top: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">Print / Save as PDF</button>
+    
+    <div class="cv-container">
+        <!-- Header - ATS Friendly -->
+        <header class="header">
+            <h1>Orlando Yanson Jr</h1>
+            <div class="title">Chief Technical Officer | Senior Android Developer | Full Stack Developer</div>
+            <div class="contact-info">
+                Email: <a href="mailto:orlandoyanson.dev@gmail.com">orlandoyanson.dev@gmail.com</a> | 
+                Phone: <a href="tel:+639542493800">+63 954 249 3800</a> | 
+                Location: Davao, Philippines | 
+                LinkedIn: <a href="https://www.linkedin.com/in/orlando-yanson-jr/">linkedin.com/in/orlando-yanson-jr</a> | 
+                GitHub: <a href="https://github.com/orlypsumdolor">github.com/orlypsumdolor</a>
+            </div>
+        </header>
+        
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="section-content summary">
+                <p>Accomplished Chief Technical Officer and Senior Mobile Developer with 12+ years of experience designing, developing, and deploying award-winning Android applications and scalable mobile solutions. Proven track record leading technical teams, architecting enterprise-grade systems, and delivering high-impact products used by millions of users across healthcare, fintech, e-commerce, social media, and IoT sectors.</p>
+                <p>Expert in Android development (Java, Kotlin), Flutter cross-platform development, backend architecture, microservices, RESTful APIs, MVVM/Clean Architecture patterns, and cloud infrastructure. Strong background in technical leadership, team management, code quality standards, and full product lifecycle development. Award-winning developer recognized for innovation in wearable technology applications.</p>
+            </div>
+        </section>
+        
+        <!-- Core Competencies / Skills -->
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="section-content">
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-list">
+                            <span class="skill-tag">Android Development</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">Jetpack Compose</span>
+                            <span class="skill-tag">Android SDK</span>
+                            <span class="skill-tag">Material Design</span>
+                            <span class="skill-tag">MVVM Architecture</span>
+                            <span class="skill-tag">Clean Architecture</span>
+                            <span class="skill-tag">RESTful APIs</span>
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">Backend Development</span>
+                            <span class="skill-tag">Database Design</span>
+                            <span class="skill-tag">Cloud Infrastructure</span>
+                            <span class="skill-tag">Firebase</span>
+                            <span class="skill-tag">Google Maps API</span>
+                            <span class="skill-tag">GPS/Geolocation</span>
+                            <span class="skill-tag">Payment Gateways</span>
+                            <span class="skill-tag">IoT Integration</span>
+                            <span class="skill-tag">WebSocket</span>
+                            <span class="skill-tag">Real-time Streaming</span>
+                            <span class="skill-tag">Agile Methodologies</span>
+                            <span class="skill-tag">Team Leadership</span>
+                            <span class="skill-tag">Technical Strategy</span>
+                            <span class="skill-tag">Code Reviews</span>
+                            <span class="skill-tag">Mentoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="section-content">
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Chief Technical Officer</span> | <span class="item-company">xpace</span>
+                        <span class="item-date">September 2022 - Present</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Lead technical strategy and architecture for all-in-one digital commerce platform serving multiple businesses</li>
+                            <li>Oversee entire technology stack, making critical architectural decisions for scalable microservices solutions</li>
+                            <li>Manage cross-functional development teams, establishing coding standards and best practices for code quality, security, and performance optimization</li>
+                            <li>Architect and develop robust backend services, RESTful APIs, and database schemas supporting multi-channel commerce integrations (Facebook, Instagram, Google)</li>
+                            <li>Drive technical roadmap alignment with business objectives, reducing infrastructure costs by 25% through optimization initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Back End Developer</span> | <span class="item-company">xpace</span>
+                        <span class="item-date">September 2022 - Present</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Design and implement scalable microservices architecture supporting high-traffic e-commerce platform</li>
+                            <li>Develop RESTful APIs and backend services handling payment processing, appointment bookings, and third-party integrations</li>
+                            <li>Optimize database performance and implement secure data handling practices ensuring PCI-DSS compliance</li>
+                            <li>Integrate payment gateways and social media APIs enabling seamless multi-channel commerce capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Flutter Developer</span> | <span class="item-company">xpace</span>
+                        <span class="item-date">September 2022 - Present</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Develop and maintain cross-platform mobile applications using Flutter and Dart for iOS and Android</li>
+                            <li>Implement clean architecture principles, state management solutions, and responsive UI components</li>
+                            <li>Integrate RESTful APIs and ensure code maintainability through comprehensive testing and documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Android Developer</span> | <span class="item-company">CoDev</span>
+                        <span class="item-date">April 2023 - Present</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Lead Android development for Wandermaps, global network platform for interactive travel maps with GPS-enabled features and offline capabilities</li>
+                            <li>Implement modern Android development practices using Kotlin, MVVM architecture, and Jetpack Compose</li>
+                            <li>Develop QR code scanning functionality and offline map capabilities, eliminating need for multiple location-specific applications</li>
+                            <li>Collaborate with cross-functional teams to deliver premium mapping experience used by travel destinations worldwide</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Engineer</span> | <span class="item-company">Kumu</span>
+                        <span class="item-date">November 2021 - April 2023</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Contributed to Philippines' leading community live streaming platform connecting millions of Filipinos worldwide</li>
+                            <li>Implemented real-time streaming features, WebSocket-based chat functionality, and social engagement tools using Android SDK and Kotlin</li>
+                            <li>Optimized app performance to handle high concurrent users, reducing crash rates by 40% through comprehensive testing and code optimization</li>
+                            <li>Improved user experience metrics by 25% working closely with product managers and designers to enhance community interaction features</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Android Developer</span> | <span class="item-company">Appetiser Apps</span>
+                        <span class="item-date">January 2019 - November 2021</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Delivered multiple client projects including Tradie Pass, FARMap, and TradeNow across fintech, agriculture, and productivity sectors</li>
+                            <li>Led full-cycle Android application development from requirement gathering to deployment, ensuring on-time delivery and high quality standards</li>
+                            <li>Implemented complex features including document management systems, geolocation-based farm mapping, and financial services integration with KYC/verification</li>
+                            <li>Mentored junior developers, conducted code reviews, and established coding standards improving team productivity by 30%</li>
+                            <li>Successfully launched apps achieving 4.5+ star ratings and high user satisfaction across different market segments</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Android Developer</span> | <span class="item-company">Binary Bean Technologies</span>
+                        <span class="item-date">November 2017 - January 2019</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed Avario Intelligent Home Technology, comprehensive smart home automation application controlling IoT devices</li>
+                            <li>Built intuitive Android interfaces with real-time communication protocols for controlling home automation systems</li>
+                            <li>Integrated with various IoT devices and designed modular architecture enabling easy scalability and future hardware compatibility</li>
+                            <li>Focused on creating energy-efficient solutions and user-friendly experiences making smart home technology accessible to mainstream consumers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Android Developer</span> | <span class="item-company">Oflander Dockhiemer</span>
+                        <span class="item-date">March 2017 - November 2017</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Led development of ORSTAT, healthcare operations management application for operating room efficiency in hospital environments</li>
+                            <li>Managed project timelines, coordinated with stakeholders, and oversaw team of developers ensuring timely delivery</li>
+                            <li>Implemented real-time notification systems, task management workflows, and comprehensive reporting features improving OR staff coordination</li>
+                            <li>Designed intuitive interfaces for medical staff with emphasis on reliability and ease of use in high-pressure hospital environments</li>
+                            <li>Delivered solution improving operational transparency and on-time performance tracking for individual staff, teams, and rooms</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Mobile Application Developer</span> | <span class="item-company">Mynd Dynamic Consulting Inc</span>
+                        <span class="item-date">November 2015 - February 2017</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed healthcare and wellness applications including SharecareRx and Dr. Oz companion apps for health monitoring and educational content delivery</li>
+                            <li>Implemented features for stress management tracking, health monitoring, and educational content delivery with analytics capabilities</li>
+                            <li>Integrated with wearable devices and health APIs to collect user data while maintaining HIPAA-compliant privacy and security standards</li>
+                            <li>Built engaging user experiences encouraging healthy lifestyle habits through data-driven insights and personalized recommendations</li>
+                            <li>Collaborated with healthcare professionals ensuring medical accuracy and usability for health-conscious users</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Mobile Application Developer</span> | <span class="item-company">Twidl Inc.</span>
+                        <span class="item-date">October 2013 - November 2015</span>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed Epic Life, award-winning language adventure game for Samsung Galaxy Gear watches winning Globe Samsung Regional App Challenge (November 2014)</li>
+                            <li>Represented Philippines internationally in SingTel Group competition in Singapore for wearable technology innovation</li>
+                            <li>Developed social and travel applications including Lifebit, City Lifebit, Davao City Clubs, and Globe Hopp with GPS/geolocation features</li>
+                            <li>Implemented social networking capabilities, integrated Google Maps API, and built cloud architecture with REST APIs for scalable social platforms</li>
+                            <li>Created gamification elements and social engagement features connecting users across multiple applications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- Key Achievements / Projects -->
+        <section class="section">
+            <h2 class="section-title">Key Achievements & Notable Projects</h2>
+            <div class="section-content">
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Kumu</span> - Philippines' Leading Live Streaming Platform
+                    </div>
+                    <div class="item-description">
+                        Social entertainment platform connecting millions of Filipinos worldwide with real-time streaming, interactive chat, virtual gifting, and community engagement tools. Technologies: Android, Kotlin, Java, WebSocket, Firebase, MVVM Architecture.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Wandermaps</span> - Global Interactive Travel Maps Platform
+                    </div>
+                    <div class="item-description">
+                        GPS-enabled interactive maps for travel destinations with QR code scanning and offline capabilities, eliminating need for multiple location-specific apps. Technologies: Android, Kotlin, Google Maps API, MVVM Architecture, RESTful APIs.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Xpace</span> - All-in-One Digital Commerce Platform
+                    </div>
+                    <div class="item-description">
+                        Comprehensive platform enabling businesses to build digital stores, manage appointment bookings, and integrate with Facebook, Instagram, and Google. Technologies: Flutter, Dart, Microservices, REST APIs, Payment Gateways, Firebase.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Epic Life</span> - Award-Winning Wearable Game
+                    </div>
+                    <div class="item-description">
+                        Language adventure game for Samsung Galaxy Gear watches that won Globe Samsung Regional App Challenge, representing Philippines internationally in Singapore competition.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="section-content">
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Bachelor of Science in Information Technology</span> | <span class="item-company">Notre Dame of Dadiangas University</span>
+                        <span class="item-date">June 2009 - October 2013</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Awards & Recognition -->
+        <section class="section">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="section-content">
+                <div class="award-item">
+                    <div class="item-header">
+                        <span class="award-title">Globe Samsung Regional App Challenge Winner</span>
+                        <span class="item-date">November 2014</span>
+                    </div>
+                    <div class="award-description">
+                        Won regional app development competition for Epic Life game on Samsung Galaxy Gear watch, representing Philippines internationally in SingTel Group competition in Singapore.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>

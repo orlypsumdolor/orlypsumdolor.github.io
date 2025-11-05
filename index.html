@@ -213,6 +213,34 @@
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
+        .hero-cta-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hero-cta-secondary {
+            background: var(--bg-white);
+            color: var(--primary-color);
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+        }
+
+        .hero-cta-secondary:hover {
+            background: var(--primary-color);
+            color: var(--bg-white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
         .hero-image-container {
             display: flex;
             justify-content: center;
@@ -800,6 +828,16 @@
                 flex-wrap: wrap;
             }
 
+            .hero-cta-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-cta, .hero-cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
             .company-header {
                 flex-direction: column;
             }
@@ -915,7 +953,10 @@
                     <h1>Orlando Yanson Jr</h1>
                     <div class="hero-title">CTO & Senior Developer • Android, Flutter, Backend 🧑‍💻</div>
                     <p class="hero-description">I'm a professional mobile developer with 12+ years of experience building award-winning Android applications and leading technical teams. Based in Davao, Philippines, specializing in scalable mobile solutions and full-stack development.</p>
-                    <a href="contact.html" class="hero-cta">Hire Me</a>
+                    <div class="hero-cta-container">
+                        <a href="contact.html" class="hero-cta">Hire Me</a>
+                        <a href="CV.html" download="Orlando_Yanson_Jr_CV.html" class="hero-cta-secondary">Download CV</a>
+                    </div>
                     
                     <!-- Social Links -->
                     <div class="social-links">
