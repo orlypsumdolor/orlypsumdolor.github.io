@@ -13,23 +13,25 @@
         }
 
         :root {
-            --primary-color: #00d9ff;
-            --secondary-color: #00a8cc;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --text-light: #8b8b8b;
-            --bg-dark: #1a1a1a;
-            --bg-darker: #141414;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --bg-light: #f9fafb;
             --bg-white: #ffffff;
-            --border-color: #333333;
-            --accent-color: #00d9ff;
+            --bg-gray: #f3f4f6;
+            --border-color: #e5e7eb;
+            --accent-color: #3b82f6;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --shadow-hover: rgba(0, 0, 0, 0.1);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background-color: var(--bg-dark);
+            background-color: var(--bg-light);
             overflow-x: hidden;
         }
 
@@ -45,11 +47,12 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 20px 0;
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px var(--shadow);
         }
 
         .nav-container {
@@ -72,7 +75,7 @@
         }
 
         .nav-links a {
-            color: var(--text-primary);
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
@@ -94,7 +97,7 @@
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background: var(--primary-color);
+            background: var(--text-primary);
             transition: all 0.3s ease;
         }
 
@@ -104,12 +107,13 @@
             top: 70px;
             left: 0;
             right: 0;
-            background: rgba(26, 26, 26, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             flex-direction: column;
             padding: 20px;
             gap: 15px;
             border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px var(--shadow);
         }
 
         .nav-links.mobile-menu a {
@@ -119,13 +123,13 @@
         }
 
         .nav-links.mobile-menu a:hover {
-            background: rgba(0, 217, 255, 0.1);
+            background: rgba(37, 99, 235, 0.1);
         }
 
         /* Main Content */
         .content {
             padding: 120px 0 80px;
-            background: var(--bg-darker);
+            background: var(--bg-light);
         }
 
         .page-hero {
@@ -137,10 +141,7 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
         }
 
         .page-hero p {
@@ -151,19 +152,19 @@
         }
 
         .section {
-            background: var(--bg-dark);
+            background: var(--bg-white);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 12px;
             padding: 50px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 3px var(--shadow);
             transition: all 0.3s ease;
         }
 
         .section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.1);
-            border-color: rgba(0, 217, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px var(--shadow-hover);
+            border-color: var(--primary-color);
         }
 
         .section-title {
@@ -171,9 +172,9 @@
             color: var(--text-primary);
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
             display: inline-block;
-            font-weight: 800;
+            font-weight: 700;
         }
 
         /* Projects Section */
@@ -185,10 +186,10 @@
         }
 
         .project-card {
-            background: var(--bg-darker);
-            border-radius: 20px;
+            background: var(--bg-white);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 3px var(--shadow);
             transition: all 0.3s ease;
             cursor: pointer;
             border: 1px solid var(--border-color);
@@ -201,16 +202,16 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            height: 3px;
+            background: var(--primary-color);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
-            border-color: rgba(0, 217, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px var(--shadow-hover);
+            border-color: var(--primary-color);
         }
 
         .project-card:hover::before {
@@ -219,7 +220,7 @@
 
         .project-header {
             padding: 25px;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 168, 204, 0.1));
+            background: var(--bg-gray);
         }
 
         .project-title {
@@ -254,13 +255,13 @@
         }
 
         .project-skill {
-            background: rgba(0, 217, 255, 0.1);
-            color: var(--primary-color);
+            background: var(--bg-gray);
+            color: var(--text-primary);
             padding: 5px 12px;
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 500;
-            border: 1px solid rgba(0, 217, 255, 0.2);
+            border: 1px solid var(--border-color);
         }
 
         .project-link {
@@ -274,12 +275,12 @@
             transition: all 0.3s ease;
             padding: 8px 12px;
             border-radius: 6px;
-            background: rgba(0, 217, 255, 0.1);
+            background: var(--bg-gray);
         }
 
         .project-link:hover {
             background: var(--primary-color);
-            color: var(--bg-dark);
+            color: var(--bg-white);
             transform: translateX(5px);
         }
 
@@ -291,7 +292,7 @@
 
         .award-item {
             padding: 20px;
-            background: var(--bg-light);
+            background: var(--bg-gray);
             border-radius: 8px;
             border-left: 4px solid var(--primary-color);
         }
@@ -328,12 +329,13 @@
             transition: all 0.3s ease;
             padding: 8px 12px;
             border-radius: 6px;
-            background: rgba(0, 217, 255, 0.1);
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
         }
 
         .award-link:hover {
             background: var(--primary-color);
-            color: var(--bg-dark);
+            color: var(--bg-white);
             transform: translateX(5px);
         }
 
@@ -349,6 +351,8 @@
             padding: 40px 20px;
             color: var(--text-secondary);
             font-size: 0.9rem;
+            background: var(--bg-white);
+            border-top: 1px solid var(--border-color);
         }
 
         .footer a {
@@ -500,6 +504,77 @@
             <!-- Projects Section -->
             <section class="section">
                 <h2 class="section-title">Featured Projects</h2>
+                
+                <!-- Healthcare & Wellness Section -->
+                <h3 style="font-size: 1.8rem; color: var(--text-primary); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">🏥 Healthcare & Wellness</h3>
+                <div class="projects-grid">
+                    
+                    <!-- Dr. Oz Companion App -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Dr. Oz Companion App</div>
+                            <div class="project-company">Mynd Dynamic Consulting Inc</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Companion application for Dr. Mehmet Oz's health and wellness show. Provides access to health information, expert advice, and educational content on topics ranging from diet and exercise to disease prevention. Helps viewers engage with show content and implement health recommendations.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Healthcare</span>
+                                <span class="project-skill">Wellness</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.doctor.oz" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SharecareRx -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">SharecareRx</div>
+                            <div class="project-company">Mynd Dynamic Consulting Inc</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Health and wellness app that helps users manage stress by running in the background during normal phone usage. Analyzes phone call patterns and behaviors to improve stress awareness almost immediately, providing insights for better mental health management.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Health Tech</span>
+                                <span class="project-skill">Analytics</span>
+                            </div>
+                            <a href="https://www.sharecare.com/rx" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ORSTAT -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">ORSTAT</div>
+                            <div class="project-company">Oflander Dockhiemer</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Healthcare operations management application for operating rooms that alerts OR staff upon turnover start, requires staff task acceptance, and tracks start/completion times. Features a robust web portal generating specific reports on on-time performance of individual staff, teams, and individual rooms to improve operational efficiency.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">Social Engine</span>
+                                <span class="project-skill">Healthcare</span>
+                                <span class="project-skill">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- IoT & Smart Home Section -->
+                <h3 style="font-size: 1.8rem; color: var(--text-primary); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">🏠 IoT & Smart Home</h3>
                 <div class="projects-grid">
                     
                     <!-- Avario -->
@@ -524,123 +599,12 @@
                         </div>
                     </div>
 
-                    <!-- City Lifebit -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">City Lifebit</div>
-                            <div class="project-company">Twidl Inc.</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">Deal and discount platform featuring unbeatable offers on tours and 3-day/2-night packages, plus tons of discounts and freebies from the city's most popular restaurants, stores, resorts, and spas. Helps users discover and save on local experiences and services.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Android</span>
-                                <span class="project-skill">Social Platform</span>
-                                <span class="project-skill">Local Services</span>
-                            </div>
-                            <a href="https://edgedavao.net/the-economy/2016/03/twidl-to-launch-city-lifebit-app/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                View Project
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 7h10v10M7 17l10-10"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                </div>
 
-                    <!-- Davao City Clubs -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Davao City Clubs</div>
-                            <div class="project-company">Twidl Inc.</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">The best companion app for Davao City tourists and locals alike, providing comprehensive information about clubs, entertainment venues, and nightlife in Davao City. Helps users discover and explore the city's vibrant social scene.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Android</span>
-                                <span class="project-skill">Java</span>
-                                <span class="project-skill">GPS/Geolocation</span>
-                                <span class="project-skill">Google Maps API</span>
-                                <span class="project-skill">Social Engine</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Dr. Oz Companion App -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Dr. Oz Companion App</div>
-                            <div class="project-company">Mynd Dynamic Consulting Inc</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">Companion application for Dr. Mehmet Oz's health and wellness show. Provides access to health information, expert advice, and educational content on topics ranging from diet and exercise to disease prevention. Helps viewers engage with show content and implement health recommendations.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Android</span>
-                                <span class="project-skill">Healthcare</span>
-                                <span class="project-skill">Wellness</span>
-                            </div>
-                            <a href="https://play.google.com/store/apps/details?id=com.doctor.oz" target="_blank" rel="noopener noreferrer" class="project-link">
-                                View Project
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 7h10v10M7 17l10-10"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Epic Life -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Epic Life ⭐</div>
-                            <div class="project-company">Twidl Inc.</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">An award-winning language adventure game for Samsung Galaxy Gear watches that teaches how civilizations start and evolve. Won the Globe Samsung Regional App Challenge and represented the Philippines in the SingTel Group competition in Singapore (November 2014). A pioneering wearable gaming experience.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Wearable</span>
-                                <span class="project-skill">Gaming</span>
-                                <span class="project-skill">Education</span>
-                                <span class="project-skill">Award Winner</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FARMap -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">FARMap</div>
-                            <div class="project-company">Appetiser Apps</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">A simple-to-use farm mapping and livestock management application. Enables farmers to manage stock movements, joining and calving dates, and welfare management tasks like drenching and vaccination dates. Input data and produce reports quickly without paperwork, streamlining farm operations.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Android</span>
-                                <span class="project-skill">Kotlin</span>
-                                <span class="project-skill">GPS/Geolocation</span>
-                                <span class="project-skill">Offline Maps</span>
-                                <span class="project-skill">Database Design</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Globe Hopp -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Globe Hopp</div>
-                            <div class="project-company">Twidl Inc.</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">A social journal for travelers to share stories of their adventures. Users can share photos, short video clips, and their adventure trail maps, creating a comprehensive digital record of their travel experiences to inspire and connect with other travelers.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Android</span>
-                                <span class="project-skill">Java</span>
-                                <span class="project-skill">Social Engine</span>
-                                <span class="project-skill">GPS/Geolocation</span>
-                                <span class="project-skill">Google Maps API</span>
-                                <span class="project-skill">Cloud Architecture</span>
-                                <span class="project-skill">REST APIs</span>
-                            </div>
-                        </div>
-                    </div>
-
+                <!-- Social & Entertainment Section -->
+                <h3 style="font-size: 1.8rem; color: var(--text-primary); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">👥 Social & Entertainment</h3>
+                <div class="projects-grid">
+                    
                     <!-- Kumu -->
                     <div class="project-card">
                         <div class="project-header">
@@ -685,38 +649,20 @@
                         </div>
                     </div>
 
-                    <!-- ORSTAT -->
+                    <!-- City Lifebit -->
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-title">ORSTAT</div>
-                            <div class="project-company">Oflander Dockhiemer</div>
+                            <div class="project-title">City Lifebit</div>
+                            <div class="project-company">Twidl Inc.</div>
                         </div>
                         <div class="project-body">
-                            <p class="project-description">Healthcare operations management application for operating rooms that alerts OR staff upon turnover start, requires staff task acceptance, and tracks start/completion times. Features a robust web portal generating specific reports on on-time performance of individual staff, teams, and individual rooms to improve operational efficiency.</p>
+                            <p class="project-description">Deal and discount platform featuring unbeatable offers on tours and 3-day/2-night packages, plus tons of discounts and freebies from the city's most popular restaurants, stores, resorts, and spas. Helps users discover and save on local experiences and services.</p>
                             <div class="project-skills">
                                 <span class="project-skill">Android</span>
-                                <span class="project-skill">Java</span>
-                                <span class="project-skill">Social Engine</span>
-                                <span class="project-skill">Healthcare</span>
-                                <span class="project-skill">REST APIs</span>
+                                <span class="project-skill">Social Platform</span>
+                                <span class="project-skill">Local Services</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- SharecareRx -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">SharecareRx</div>
-                            <div class="project-company">Mynd Dynamic Consulting Inc</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">Health and wellness app that helps users manage stress by running in the background during normal phone usage. Analyzes phone call patterns and behaviors to improve stress awareness almost immediately, providing insights for better mental health management.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Android</span>
-                                <span class="project-skill">Health Tech</span>
-                                <span class="project-skill">Analytics</span>
-                            </div>
-                            <a href="https://www.sharecare.com/rx" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <a href="https://edgedavao.net/the-economy/2016/03/twidl-to-launch-city-lifebit-app/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 View Project
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7 7h10v10M7 17l10-10"/>
@@ -725,6 +671,127 @@
                         </div>
                     </div>
 
+                    <!-- Davao City Clubs -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Davao City Clubs</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">The best companion app for Davao City tourists and locals alike, providing comprehensive information about clubs, entertainment venues, and nightlife in Davao City. Helps users discover and explore the city's vibrant social scene.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Google Maps API</span>
+                                <span class="project-skill">Social Engine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Globe Hopp -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Globe Hopp</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A social journal for travelers to share stories of their adventures. Users can share photos, short video clips, and their adventure trail maps, creating a comprehensive digital record of their travel experiences to inspire and connect with other travelers.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">Social Engine</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Google Maps API</span>
+                                <span class="project-skill">Cloud Architecture</span>
+                                <span class="project-skill">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Travel & Maps Section -->
+                <h3 style="font-size: 1.8rem; color: var(--text-primary); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">🗺️ Travel & Maps</h3>
+                <div class="projects-grid">
+                    
+                    <!-- Wandermaps -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Wandermaps</div>
+                            <div class="project-company">CoDev</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A global network of locally built maps providing premium and official interactive maps for travel and recreation destinations worldwide. Users can scan QR codes for instant access to GPS-enabled maps built and updated by destinations themselves, eliminating the need for multiple location-specific apps or paper maps.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">Google Maps API</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">QR Code</span>
+                                <span class="project-skill">Offline Maps</span>
+                                <span class="project-skill">MVVM Architecture</span>
+                                <span class="project-skill">RESTful APIs</span>
+                            </div>
+                            <a href="https://wandermaps.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Globe Hopp -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Globe Hopp</div>
+                            <div class="project-company">Twidl Inc.</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A social journal for travelers to share stories of their adventures. Users can share photos, short video clips, and their adventure trail maps, creating a comprehensive digital record of their travel experiences to inspire and connect with other travelers.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Java</span>
+                                <span class="project-skill">Social Engine</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Google Maps API</span>
+                                <span class="project-skill">Cloud Architecture</span>
+                                <span class="project-skill">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FARMap -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">FARMap</div>
+                            <div class="project-company">Appetiser Apps</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A simple-to-use farm mapping and livestock management application. Enables farmers to manage stock movements, joining and calving dates, and welfare management tasks like drenching and vaccination dates. Input data and produce reports quickly without paperwork, streamlining farm operations.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Offline Maps</span>
+                                <span class="project-skill">Database Design</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.appetiser.farmmap" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Fintech & E-Commerce Section -->
+                <h3 style="font-size: 1.8rem; color: var(--text-primary); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">💳 Fintech & E-Commerce</h3>
+                <div class="projects-grid">
+                    
                     <!-- TradeNow -->
                     <div class="project-card">
                         <div class="project-header">
@@ -742,6 +809,62 @@
                                 <span class="project-skill">KYC/Verification</span>
                                 <span class="project-skill">Material Design</span>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Xpace -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Xpace</div>
+                            <div class="project-company">xpace</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">An all-in-one digital commerce platform that empowers businesses to build their own digital stores, accept appointment bookings 24/7, and sell products through Facebook, Instagram, and Google integration. Comprehensive solution for modern businesses to manage their entire online presence from a single platform.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Flutter</span>
+                                <span class="project-skill">Dart</span>
+                                <span class="project-skill">Backend</span>
+                                <span class="project-skill">REST APIs</span>
+                                <span class="project-skill">Firebase</span>
+                                <span class="project-skill">Payment Gateway</span>
+                                <span class="project-skill">Microservices</span>
+                            </div>
+                            <a href="https://www.xpace.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Agriculture & Productivity Section -->
+                <h3 style="font-size: 1.8rem; color: var(--text-primary); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">🌾 Agriculture & Productivity</h3>
+                <div class="projects-grid">
+                    
+                    <!-- FARMap -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">FARMap</div>
+                            <div class="project-company">Appetiser Apps</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">A simple-to-use farm mapping and livestock management application. Enables farmers to manage stock movements, joining and calving dates, and welfare management tasks like drenching and vaccination dates. Input data and produce reports quickly without paperwork, streamlining farm operations.</p>
+                            <div class="project-skills">
+                                <span class="project-skill">Android</span>
+                                <span class="project-skill">Kotlin</span>
+                                <span class="project-skill">GPS/Geolocation</span>
+                                <span class="project-skill">Offline Maps</span>
+                                <span class="project-skill">Database Design</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.appetiser.farmmap" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Project
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7h10v10M7 17l10-10"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
 
@@ -770,49 +893,25 @@
                         </div>
                     </div>
 
-                    <!-- Wandermaps -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">Wandermaps</div>
-                            <div class="project-company">CoDev</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">A global network of locally built maps providing premium and official interactive maps for travel and recreation destinations worldwide. Users can scan QR codes for instant access to GPS-enabled maps built and updated by destinations themselves, eliminating the need for multiple location-specific apps or paper maps.</p>
-                            <div class="project-skills">
-                                <span class="project-skill">Android</span>
-                                <span class="project-skill">Kotlin</span>
-                                <span class="project-skill">Google Maps API</span>
-                                <span class="project-skill">GPS/Geolocation</span>
-                                <span class="project-skill">QR Code</span>
-                                <span class="project-skill">Offline Maps</span>
-                                <span class="project-skill">MVVM Architecture</span>
-                                <span class="project-skill">RESTful APIs</span>
-                            </div>
-                            <a href="https://wandermaps.com/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                View Project
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 7h10v10M7 17l10-10"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                </div>
 
-                    <!-- Xpace -->
+                <!-- Gaming & Education Section -->
+                <h3 style="font-size: 1.8rem; color: var(--text-primary); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);">🎮 Gaming & Education</h3>
+                <div class="projects-grid">
+                    
+                    <!-- Epic Life -->
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-title">Xpace</div>
-                            <div class="project-company">xpace</div>
+                            <div class="project-title">Epic Life ⭐</div>
+                            <div class="project-company">Twidl Inc.</div>
                         </div>
                         <div class="project-body">
-                            <p class="project-description">An all-in-one digital commerce platform that empowers businesses to build their own digital stores, accept appointment bookings 24/7, and sell products through Facebook, Instagram, and Google integration. Comprehensive solution for modern businesses to manage their entire online presence from a single platform.</p>
+                            <p class="project-description">An award-winning language adventure game for Samsung Galaxy Gear watches that teaches how civilizations start and evolve. Won the Globe Samsung Regional App Challenge and represented the Philippines in the SingTel Group competition in Singapore (November 2014). A pioneering wearable gaming experience.</p>
                             <div class="project-skills">
-                                <span class="project-skill">Flutter</span>
-                                <span class="project-skill">Dart</span>
-                                <span class="project-skill">Backend</span>
-                                <span class="project-skill">REST APIs</span>
-                                <span class="project-skill">Firebase</span>
-                                <span class="project-skill">Payment Gateway</span>
-                                <span class="project-skill">Microservices</span>
+                                <span class="project-skill">Wearable</span>
+                                <span class="project-skill">Gaming</span>
+                                <span class="project-skill">Education</span>
+                                <span class="project-skill">Award Winner</span>
                             </div>
                         </div>
                     </div>
@@ -864,4 +963,5 @@
     </script>
 </body>
 </html>
+
 
